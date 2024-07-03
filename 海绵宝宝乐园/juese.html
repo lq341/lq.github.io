@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>角色介绍</title>
+    <style>
+        /* CSS样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* 默认背景颜色 */
+            text-align: center;
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2, h3, h4, h5, h6 {
+            color: #666;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        p {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>角色介绍</h1>
+    
+    <h2>海绵宝宝</h2>
+    <img src="./照片/海绵宝宝.jpg" alt="海绵宝宝的照片" style="width: 200px;">
+    <p>海绵宝宝：黄色的方形海绵，乐观开朗，喜欢捕捉水母和吹泡泡，是蟹堡王餐厅的主厨。</p>
+    
+    <h2>派大星</h2>
+    <img src="./照片/派大星.jpg" alt="派大星的照片" style="width: 200px;">
+    <p>派大星：粉红色的海星，海绵宝宝最好的朋友，傻气天真，喜欢发呆和吃冰淇淋。</p>
+
+    <h3>章鱼哥</h3>
+    <img src="./照片/章鱼哥.jpg" alt="章鱼哥的照片" style="width: 200px;">
+    <p>章鱼哥：蓝色的章鱼，海绵宝宝和派大星的邻居兼同事，傲慢自恋，喜欢吹奏竖笛和画自画像。</p>
+
+    <h4>蟹老板</h4>
+    <img src="./照片/蟹老板.jpg" alt="蟹老板的照片" style="width: 200px;">
+    <p>蟹老板：红色的螃蟹，蟹堡王餐厅的老板，视钱如命，极为小气，有一个抹香鲸女儿珍珍。</p>
+
+    <h5>痞老板</h5>
+    <img src="./照片/痞老板.jpg" alt="痞老板的照片" style="width: 200px;">
+    <p>痞老板：绿色的浮游生物，只有一只眼睛，是蟹老板的死对头，海之霸餐厅的老板，一直试图偷取蟹堡王的秘方。</p>
+
+    <h6>珊迪</h6>
+    <img src="./照片/珊迪.jpg" alt="珊迪的照片" style="width: 200px;">
+    <p>珊迪：一只来自德克萨斯州的松鼠，穿着潜水服，在一个充满空气的圆顶里住着，是科学家、探险家和发明家，喜欢运动和科学。</p>
+
+    <h6>珍珍</h6>
+    <img src="./照片/珍珍.jpg" alt="珍珍的照片" style="width: 200px;">
+    <p>珍珍：一只青少年抹香鲸，蟹老板的女儿。</p>
+
+    <h6>小蜗</h6>
+    <img src="./照片/小蜗.jpg" alt="小蜗的照片" style="width: 200px;">
+    <p>小蜗：一只海蜗牛，海绵宝宝的宠物，会像猫一样叫。</p>
+
+    <script>
+        // JavaScript代码
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        
+        document.body.style.backgroundColor = getRandomColor();
+    </script>
+</body>
+</html>

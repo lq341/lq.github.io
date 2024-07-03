@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>剧集介绍</title>
+    <style>
+        /* CSS样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 20px; /* 添加一些边距 */
+            transform: scale(0.9); /* 缩小页面内容 */
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        #video-container {
+            margin-top: 20px;
+        }
+        .bubble {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(173, 216, 230, 0.7);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: floatUp 4s linear infinite;
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-1000px);
+            }
+        }
+
+        /* 新增的样式 */
+        #movie-select {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>剧集名称：《剧集名称》</h1>
+<h2>剧集简介：</h2>
+<p>这里是剧集的简要介绍，可以包括剧情梗概、主要角色介绍等内容。</p>
+
+<h2>剧集海报：</h2>
+<img src="./照片/剧集海报.jpg" alt="剧集海报">
+
+<h2>剧集视频预告：</h2>
+<div id="video-container">
+    <video width="640" height="360" controls>
+      <source src="./视频/1111.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- 新增选择动画片的部分 -->
+<div id="movie-select">
+    <label for="movies">海绵宝宝合集：</label>
+    <select id="movies">
+        <option value="spongebob">海绵宝宝第一集</option>
+        <option value="mickey">海绵宝宝第二集</option>
+        <option value="tom-jerry">海绵宝宝第三集</option>
+        <option value="pokemon">海绵宝宝第四集</option>
+    </select>
+    <button onclick="playSelectedMovie()">播放选中动画片</button>
+</div>
+
+<script>
+    // JavaScript代码
+    document.addEventListener('click', createBubbles);
+
+    const colors = ['#ff7f50', '#6495ed', '#ff1493', '#00bfff', '#adff2f'];
+
+    function createBubbles(event) {
+        const numBubbles = Math.floor(Math.random() * 11) + 10; // 随机生成10到20个泡泡
+
+        for (let i = 0; i < numBubbles; i++) {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            
+            // 随机颜色
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            bubble.style.backgroundColor = randomColor;
+
+            // 随机大小
+            const size = Math.floor(Math.random() * 30) + 10; // 大小在10到39像素之间
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+
+            document.body.appendChild(bubble);
+            bubble.style.left = `${event.clientX - size / 2}px`;
+            bubble.style.top = `${event.clientY - size / 2}px`;
+
+            animateBubble(bubble);
+        }
+    }
+
+    function animateBubble(bubble) {
+        const speed = Math.random() * 2 + 1;
+        const direction = Math.random() * Math.PI * 2;
+        const dx = Math.cos(direction) * speed;
+        const dy = Math.sin(direction) * speed;
+
+        function move() {
+            const x = parseFloat(bubble.style.left);
+            const y = parseFloat(bubble.style.top);
+            bubble.style.left = `${x + dx}px`;
+            bubble.style.top = `${y - dy}px`; // 向上飘动，使用负数dy
+
+            if (y < -100) { // 如果超出顶部边界，移除泡泡
+                bubble.remove();
+            } else {
+                requestAnimationFrame(move);
+            }
+
+            checkCollision(bubble);
+        }
+        move();
+    }
+
+    function checkCollision(bubble) {
+        const bubbles = document.querySelectorAll('.bubble');
+        bubbles.forEach(b => {
+            if (b !== bubble && isColliding(b, bubble)) {
+                b.remove();
+                bubble.remove();
+            }
+        });
+    }
+
+    function isColliding(b1, b2) {
+        const rect1 = b1.getBoundingClientRect();
+        const rect2 = b2.getBoundingClientRect();
+
+        return !(rect1.right < rect2.left || 
+                 rect1.left > rect2.right || 
+                 rect1.bottom < rect2.top || 
+                 rect1.top > rect2.bottom);
+    }
+
+    function playSelectedMovie() {
+        const select = document.getElementById('movies');
+        const selectedMovie = select.value;
+
+        switch (selectedMovie) {
+            case 'spongebob':
+                window.location.href = './视频/海绵宝宝第一集.mp4';
+                break;
+            case 'mickey':
+                window.location.href = './视频/海绵宝宝第二集.mp4';
+                break;
+            case 'tom-jerry':
+                window.location.href = './视频/海绵宝宝第三集.mp4';
+                break;
+            case 'pokemon':
+                window.location.href = './视频/海绵宝宝第四集.mp4';
+                break;
+        }
+    }
+</script>
+
+</body>
+</html>

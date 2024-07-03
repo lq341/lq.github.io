@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海绵宝宝主题乐园</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header, .footer {
+            background-color: #f8f8f8;
+            padding: 10px 0;
+        }
+        .w {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .nav {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        .nav li {
+            display: inline;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+        .nav .active a {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+        .main_title {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .main_jieshao {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            background-image: url('./照片/'); /* 添加背景图片 */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .main_jieshao_text {
+            flex: 1;
+        }
+        .main_jieshao_img img {
+            width: 300px;
+            height: auto;
+        }
+        .main_juzhao {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .juzhao_img img {
+            width: 100%;
+            height: auto;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="w">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./照片/海绵宝宝logo.jpg" alt="海绵宝宝主题乐园 Logo" class="logo_img">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="active"><a href="index.html">首页</a></li>
+                    <li><a href="juese.html">角色介绍</a></li>
+                    <li><a href="juji.html">剧集介绍</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="banner">
+        <img src="./照片/海绵宝宝主题横幅.jpg" alt="海绵宝宝主题横幅">
+    </div>
+    <main class="main">
+        <div class="w">
+            <div class="main_title">剧情简介</div>
+            <div class="main_jieshao">
+                <div class="main_jieshao_text">
+                    <p>
+                        《海绵宝宝》(SpongeBob SquarePants)是美国著名的系列电视动画,1999年在尼克国际儿童频道开播，至今仍持续制播中。动画场景设定于太平洋海底,一座称为比奇堡(Bikini Bottom)的城市,故事围绕主角海绵宝宝和他的好朋友们展开。由于剧情幽默、寓教于乐且充满想象力,受到许多儿童及成年观众喜爱,并被翻译成多国语言版本,成为风靡世界的作品。
+                    </p>
+                    <p>这部动画片的主角海绵宝宝是一只黄色的方形海绵,他住在太平洋深处风光优美无人知道的比基尼海滩水域下。 那里是一个没有忧愁的世界，住着一群快乐的海洋生物。海绵宝宝和他的宠物小蜗一起住在一所只有两间卧室,装修豪华的大菠萝房子里。 海绵宝宝积极乐观、认真努力、非常善良。尽管都是出于好意，他却 总是避免不了给自己甚至身边的每一个人带来麻烦。而且他总是努力过头，以至于会把局面变得更糟，最后往往变成灾难。 但是，海绵宝宝就是这样一个永远只看到事物的阳光面的人，他积极的态度和对所有事情的热情让人无法不爱他。</p>
+                </div>
+                <div class="main_jieshao_img">
+                    <img src="./照片/海绵宝宝剧照.jpg" alt="海绵宝宝剧照">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="w">
+            欢迎来到海绵宝宝主题乐园
+        </div>
+    </footer>
+</body>
+</html>
